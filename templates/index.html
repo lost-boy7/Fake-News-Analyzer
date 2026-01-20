@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News Detection System | AI-Powered Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔍 Fake News Detection System</h1>
+            <p class="subtitle">AI-Powered News Authenticity Analysis</p>
+            <div class="author">Developed by Manas Baiswar | DIT University</div>
+        </header>
+
+        <main>
+            <div class="card">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="text">📝 Analyze Text</button>
+                    <button class="tab-btn" data-tab="url">🔗 Analyze URL</button>
+                </div>
+
+                <div class="tab-content active" id="text-tab">
+                    <textarea 
+                        id="newsText" 
+                        placeholder="Paste your news article here... (minimum 10 characters)"
+                        rows="8"
+                    ></textarea>
+                    <button class="btn btn-primary" id="analyzeTextBtn">
+                        <span class="btn-text">Analyze Text</span>
+                        <span class="loader hidden"></span>
+                    </button>
+                </div>
+
+                <div class="tab-content" id="url-tab">
+                    <input 
+                        type="url" 
+                        id="newsUrl" 
+                        placeholder="https://example.com/article"
+                        class="url-input"
+                    >
+                    <button class="btn btn-primary" id="analyzeUrlBtn">
+                        <span class="btn-text">Analyze URL</span>
+                        <span class="loader hidden"></span>
+                    </button>
+                </div>
+            </div>
+
+            <div id="resultCard" class="card result-card hidden">
+                <h2>Analysis Results</h2>
+                
+                <div class="result-header">
+                    <div class="prediction-badge" id="predictionBadge">
+                        <span id="predictionText">ANALYZING...</span>
+                    </div>
+                    <div class="confidence-score">
+                        <span class="confidence-label">Confidence:</span>
+                        <span id="confidenceScore">0%</span>
+                    </div>
+                </div>
+
+                <div class="probability-bars">
+                    <div class="prob-item">
+                        <div class="prob-label">
+                            <span>Fake News</span>
+                            <span id="fakeProb">0%</span>
+                        </div>
+                        <div class="prob-bar">
+                            <div class="prob-fill fake-fill" id="fakeFill"></div>
+                        </div>
+                    </div>
+                    <div class="prob-item">
+                        <div class="prob-label">
+                            <span>Real News</span>
+                            <span id="realProb">0%</span>
+                        </div>
+                        <div class="prob-bar">
+                            <div class="prob-fill real-fill" id="realFill"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="features-info">
+                    <h3>Text Analysis</h3>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <span class="feature-label">Word Count:</span>
+                            <span class="feature-value" id="wordCount">-</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-label">Sensational Words:</span>
+                            <span class="feature-value" id="sensationalCount">-</span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-label">Emotional Words:</span>
+                            <span class="feature-value" id="emotionalCount">-</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="disclaimer">
+                    ⚠️ This is an AI prediction. Always verify news from multiple reliable sources.
+                </div>
+            </div>
+
+            <div id="errorCard" class="card error-card hidden">
+                <h3>⚠️ Error</h3>
+                <p id="errorMessage"></p>
+            </div>
+        </main>
+
+        <footer>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-value">92.3%</span>
+                    <span class="stat-label">Accuracy</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">5000</span>
+                    <span class="stat-label">Features</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">&lt;100ms</span>
+                    <span class="stat-label">Response Time</span>
+                </div>
+            </div>
+            
+            <div class="tech-stack">
+                <span>Powered by:</span>
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">Flask</span>
+                <span class="tech-badge">scikit-learn</span>
+                <span class="tech-badge">NLTK</span>
+            </div>
+
+            <p class="copyright">
+                © 2025 Manas Baiswar | DIT University, Dehradun
+            </p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
