@@ -221,7 +221,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Manas Baiswar**
 
 - GitHub: [@manasbaiswar](https://github.com/manasbaiswar)
-- Email: manas.baiswar@example.com
+- Email: baiswarm@gmail.com
+  
 
 ## 🙏 Acknowledgments
 
